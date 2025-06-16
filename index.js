@@ -43,13 +43,14 @@ document.addEventListener('mouseup', () => {
 
 
 function showCookie(event) {
-    let x = event.clientX-42;
-    let y = event.offsetY-35;
+    let x = event.clientX-50;
+    let y = event.offsetY-28;
     //these should be both client or offset, but this works for some reason??
 
     const yWrapper = document.createElement("div"); //parent
     const xWrapper = document.createElement("div"); //child
     const cookie = document.createElement("img"); //grandchild
+    // const shadowWrapper = document.createElement("div");
 
 
     const imgSideLength = 70;
@@ -57,14 +58,30 @@ function showCookie(event) {
     cookie.height = imgSideLength;
     cookie.src = "cookie.png";
 
-    // yWrapper.
-    yWrapper.width = imgSideLength+20;
-    yWrapper.height = imgSideLength+20;
-    yWrapper.borderRadius = "50%";
-    yWrapper.boxShadow = "50px 10px 5px white";
-    yWrapper.style.backgroundColor = "yellow";
+    xWrapper.style.width = (imgSideLength-15) + "px";
+    xWrapper.style.height = (imgSideLength-15) + "px";
 
+    // yWrapper.
     yWrapper.style = `position: absolute; left: ${x}px; top: ${y}px;`;
+    // xWrapper.style = `position: absolute; right: ${10}px; top: ${0}px;
+    //                 height: ${imgSideLength-20}px; width: ${imgSideLength-20}px;`;
+    // cookie.style = `position: absolute; right: ${0}px; top: ${0}px;`;
+    xWrapper.style.transform = "translateX(20px)";
+
+    let rotation = Math.floor(Math.random()*360);
+
+    cookie.style.transform = `translateX(-10px) translateY(-10px) rotate(${rotation}deg)`;
+
+    // yWrapper.width = 100;
+    // yWrapper.height = 100;
+    // yWrapper.borderRadius = "50%";
+    
+    // yWrapper.style.backgroundColor = "yellow"; //debug
+
+    xWrapper.style.borderRadius = "50%";
+    xWrapper.style.boxShadow = "0px 0px 10px 7px hsla(0, 0%, 0%, 0.592)";
+
+    
 
     //prevents drag/select
     cookie.draggable = false;
@@ -77,8 +94,8 @@ function showCookie(event) {
     yWrapper.style.pointerEvents = "none";
     //~~~~~~~~~~~~~~~~~~~~~~~~
 
-    let rotation = Math.floor(Math.random()*360);
-    cookie.style.transform = `rotate(${rotation}deg)`;
+    
+    // cookie.style.transform = `translateX(-10px); translateY(-10px); rotate(${rotation}deg)`;
     // cookie.style.transition = "opacity 0.5s";
 
     
@@ -87,7 +104,7 @@ function showCookie(event) {
     btnCtr.appendChild(yWrapper);
 
 
-    setTimeout(() => cookie.remove(), 5000); //clear cookies in case animation fails
+    // setTimeout(() => cookie.remove(), 5000); //clear cookies in case animation fails
 
 
     const animSwitch = true;
