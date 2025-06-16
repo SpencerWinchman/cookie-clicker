@@ -104,7 +104,7 @@ function showCookie(event) {
     btnCtr.appendChild(yWrapper);
 
 
-    // setTimeout(() => cookie.remove(), 5000); //clear cookies in case animation fails
+    setTimeout(() => cookie.remove(), 3000); //clear cookies in case animation fails
 
 
     const animSwitch = true;
@@ -145,6 +145,8 @@ function showCookie(event) {
                 yWrapper.addEventListener("transitionend", function handleFade(e) {
                     if (e.propertyName === "transform") {
                         cookie.remove();
+						xWrapper.remove();
+						yWrapper.remove();
                     }
                 });
             }
