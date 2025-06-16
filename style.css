@@ -1,0 +1,53 @@
+body {
+    font-family: Inter, Arial;
+    background-color: bisque;
+    font-weight: bold;
+
+    overflow: hidden;
+}
+
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 4em;
+    user-select: none;
+}
+
+
+#btnContainer {
+    margin-top: 75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* background-color: hsl(46, 100%, 63%); */
+}
+
+
+#btn {
+    font-family: Inter, Arial;
+    font-size: 8em;
+    padding: 0.3em;
+    border-radius: 40px;
+    border: 0px;
+    /* box-shadow: 7px 7px 15px gray; */
+    font-weight: bold;
+    background-color: hsl(221, 100%, 42%);
+    color: hsl(221, 100%, 52%);
+    cursor: pointer;
+
+    user-select: none;
+    /* transition-duration: 2s; */
+}
+
+
+#btn:hover{
+    background-color: hsl(221, 100%, 47%);
+    color: hsl(221, 100%, 57%);
+}
+
+
+#btn:active {
+    background-color: hsl(221, 100%, 52%);
+    color: hsl(221, 100%, 62%);
+}
